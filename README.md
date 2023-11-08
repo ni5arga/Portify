@@ -41,3 +41,33 @@ Options:
 - `<host>` : The target host you want to scan.
 - `<start-port>`: The first port in the range you want to scan.
 - `<end-port>` : The last port in the range you want to scan.
+- 
+## Example Commands 
+
+1. Scan a range of ports on a target host and show open ports:
+```bash
+./portify -show-open example.com 80 100
+```
+2. Scan a range of ports on a target host and show banners from open ports:
+```bash
+./portify -show-banners example.com 20 30
+```
+3. Scan a range of ports with a custom timeout:
+```bash
+./portify -timeout 5s example.com 50 60
+```
+4. Scan with a specific number of parallel scans:
+```bash
+./portify -parallel 50 example.com 2000 2100
+```
+5. Show both open and closed ports in the output:
+```bash
+./portify -show-open -show-closed example.com 7000 7100
+```
+6. Show closed ports only:
+```bash
+./portify -show-closed example.com 4000 4010
+```
+
+
+
