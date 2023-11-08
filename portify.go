@@ -69,13 +69,21 @@ func main() {
 		flag.PrintDefaults()
 	}
 
-	flag.DurationVar(&timeout, "timeout", 3*time.Second, "Connection timeout duration")
+	var timeoutString string
+	flag.StringVar(&timeoutString, "timeout", "3s", "Connection timeout duration")
 	flag.IntVar(&parallelScans, "parallel", 100, "Number of parallel scans")
 	flag.BoolVar(&showClosedPorts, "show-closed", false, "Show closed ports in the output")
 	flag.BoolVar(&showBanners, "show-banners", false, "Show banners from open ports")
 	flag.BoolVar(&showOpenPorts, "show-open", false, "Show open ports in the output")
 
 	flag.Parse()
+
+	var err error
+	timeout, err = time.ParseDuration(timeoutString)
+	if err != nil {
+		fmt.Println("Invalid timeout duration")
+		os.Exit(1)
+	}
 
 	if flag.NArg() != 3 {
 		flag.Usage()
