@@ -17,5 +17,5 @@ To use Portify, follow these steps:
    ```
 3. Build the project with Go
    ```bash
-  go build portify.go
-  ```
+   go build portify.go
+   ``` 
