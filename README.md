@@ -41,7 +41,7 @@ Options:
 - `<host>` : The target host you want to scan.
 - `<start-port>`: The first port in the range you want to scan.
 - `<end-port>` : The last port in the range you want to scan.
-- 
+
 ## Example Commands 
 
 1. Scan a range of ports on a target host and show open ports:
