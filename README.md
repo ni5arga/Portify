@@ -19,3 +19,25 @@ To use Portify, follow these steps:
    ```bash
    go build portify.go
    ``` 
+You can now use the `portify` binary to scan ports. 
+
+## Command Line Usage 
+```bash
+Usage: ./portify [options] <host> <start-port> <end-port>
+
+Options:
+  -timeout string
+        Connection timeout duration (default "3s")
+  -parallel int
+        Number of parallel scans (default 100)
+  -show-closed
+        Show closed ports in the output
+  -show-banners
+        Show banners from open ports
+  -show-open
+        Show open ports in the output
+```
+
+- `<host>` : The target host you want to scan.
+- `<start-port>`: The first port in the range you want to scan.
+- `<end-port>` : The last port in the range you want to scan.
